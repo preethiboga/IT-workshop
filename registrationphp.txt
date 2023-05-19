@@ -1,0 +1,27 @@
+<?php
+$server="localhost3307";
+$username="root";
+$password=" ";
+$db="student_reg"
+$conn=mysqli_connect{$server,$username,$password,$db};
+if(!$conn)
+{
+   die("unable to connect");
+}
+echo "</br>";
+if(isset($_post['signup']))
+{
+  $username=$_post['username'];
+  $password=$_post['password'];
+  $email=$_post['email'];
+  $query="insert into login(username,password,email) values('$username','$password','$email','$query')";
+}
+if(mysqli_query($query,$conn))
+{
+  echo "registered succesfully!"
+}
+else
+{
+  echo "data not inserted"
+}
+?>
